@@ -14,3 +14,21 @@ var tagin = document.querySelector(".bolded");
 //querySelectorAll
 //Returns a list of elements that matches a given CSS-style selector
 var e = document.querySelectorAll(".bolded");
+
+// document.getElementById("first")
+// <p id="first" class="special">
+
+// document.querySelector("#first");
+// <p id="first" class="special">
+
+// document.getElementsByClassName("special")[0]
+// <p id="first" class="special">
+
+// document.querySelector(".special");
+// <p id="first" class="special">
+
+// document.querySelectorAll(".special")[0];
+// <p id="first" class="special">
+
+// document.getElementsByTagName("p")[0]
+// <p id="first" class="special"></p>
