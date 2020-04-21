@@ -5,8 +5,9 @@
 // isIsogram("moOse") == false // -- ignore letter case
 
 function isIsogram(word){
-    var str = word.toLowerCase(),
-    if (str !== "string"){
-
+    if(word !== "string") {
+        return "Argument should be a string, do not use letters";
     }
+    if (word === ' '){}
 }
+    
