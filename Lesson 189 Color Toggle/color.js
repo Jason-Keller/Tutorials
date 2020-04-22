@@ -14,7 +14,7 @@
 //     isPurple = !isPurple;
 // });
 
-var button = document.querySelector("button")
+var button = document.querySelector("button");
 var isPurple = false;
 
 button.addEventListener("click", function(){
