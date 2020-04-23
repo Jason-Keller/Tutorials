@@ -29,7 +29,7 @@ for(var i = 0; i < squares.length; i++){
     squares[i].style.backgroundColor = colors[i];
     // Add click listeners to squares
     squares[i].addEventListener("click", function(){
-    // Grab color of clicked suqares
+    // Grab color of clicked squares
         var clickedColor = this.style.backgroundColor; 
     // Compare color to pickedColor
         if(clickedColor === pickedColor){
