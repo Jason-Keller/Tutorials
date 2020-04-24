@@ -1,5 +1,5 @@
-var colors = generateRandomColors(numSquares);
 var numSquares = 6;
+var colors = generateRandomColors(numSquares);
 var squares = document.querySelectorAll(".square");
 var pickedColor = pickColor();
 var colorDisplay = document.getElementById("colorDisplay");
