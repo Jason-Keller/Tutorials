@@ -8,51 +8,45 @@ var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
+var modeButtons = document.querySelectorAll(".mode");
 
-easyBtn.addEventListener("click", function(){
-    hardBtn.classList.remove("selected");
-    easyBtn.classList.add("selected");
-    numSquares = 3;
-    colors = generateRandomColors(numSquares);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    for(var i = 0; i < squares.length; i++){
-        if(colors[i]){
-            squares[i].style.backgroundColor = colors[i];
-        } else {
-            squares[i].style.display = "none";
-        }
+function init (){
+    for(var i = 0; i < modeButtons.length; i++){
+        modeButtons[i].addEventListener("click", function(){
+            modeButtons[0].classList.remove("selected");
+            modeButtons[1].classList.remove("selected");
+            this.classList.add("selected");
+            // Ternary Operator
+            this.textContent === "Easy" ? numSquares = 3: numSquares = 6;
+            reset();
+        });
     }
-});
+}
 
-hardBtn.addEventListener("click", function(){
-    hardBtn.classList.add("selected");
-    easyBtn.classList.remove("selected");
-    numSquares = 6;
-    colors = generateRandomColors(numSquares);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    for(var i = 0; i < squares.length; i++){
-            squares[i].style.backgroundColor = colors[i];
-            squares[i].style.display = "block";
-    }
-});
-
-resetButton.addEventListener("click", function(){
-    // Generate all new colors
+function reset(){
     colors = generateRandomColors(numSquares);
     // Pick a new random color from array
     pickedColor = pickColor();
     // Change colorDisplay to match picked color
     colorDisplay.textContent = pickedColor;
-    this.textContent = "New Colors";
+    resetButton.textContent = "New Colors";
     // Will hide the cprrect button on play again
     messageDisplay.textContent = "";
     // Change colors of squares on page
     for(var i = 0; i < squares.length; i++){
+        if(colors[i]) {
+            squares[i].style.display = "block";
+            squares[i].style.backgroundColor = colors[i];
+        } else {
+            squares[i].display = "none";
+        }
         squares[i].style.backgroundColor = colors[i];
     }
     h1.style.backgroundColor = "steelblue";
+}
+
+resetButton.addEventListener("click", function(){
+   reset();
 });
 
 colorDisplay.textContent = pickedColor;
