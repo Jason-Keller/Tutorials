@@ -13,3 +13,11 @@ $("img").attr("src", "https://farm3.staticflickr.com/2418/2243463214_f32ab004af_
 
 $("input").attr("text");
 
+//.val() extract the value of an input!
+$("select").val();
+
+$("li").removeClass("wrong");
+
+//addClass
+//removeClass
+//toggleClass
