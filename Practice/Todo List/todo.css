@@ -1,4 +1,38 @@
-body {
-    display: flex;
-    justify-content: center;
-  }
+body{
+  font-family: Tahoma;
+  background: whitesmoke;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  font-size: 75px;
+}
+
+hr {
+  width: 100%;
+}
+
+.begin {
+  width: 100%;
+  border: none;
+  color: green;
+}
+
+div {
+  border: none;
+}
+
+.space {
+  width: 600px;
+  height: 40px;
+}
+
+.hiddenButton {
+  width: 100%;
+  border: none;
+  color: green;
+}
