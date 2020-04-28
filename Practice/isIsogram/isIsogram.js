@@ -6,20 +6,35 @@
 // isIsogram("moOse") == false // -- ignore letter case
 
 // function isIsogram(word){
-//     if(word !== "string") {
-//         return "Argument should be a string, do not use letters";
+//     var isogram = word.split("")
+//     console.log(isogram);
+//     for (var i = 0; i < isogram.length; i++){
+//         if (isogram[i] !== isogram[i]){
+//             console.log("True, this is an isogram.");
+//         } else if (isogram[i] === isogram[i]) {
+//             console.log("False, this is not an isogram.");
+//         }
 //     }
-//     if (word === ' '){}
 // }
 
-function isIsogram(word){
-    var isogram = word.split("")
-    console.log(isogram);
-    for (var i = 0; i < isogram.length; i++){
-        if (isogram[i] !== isogram[i]){
-            console.log("True, this is an isogram.");
-        } else if (isogram[i] === isogram[i]) {
-            console.log("False, this is not an isogram.");
+// function isIsogram(word){
+//     const isogram = word.toLowerCase().split("");
+//     console.log(isogram);
+//     for (var i = 0; i < isogram.length; i++){
+
+//     }
+// }
+
+
+function isIsogram(str){
+    var i, j;
+    str = str.toLowerCase();
+    for(i = 0; i < str.length; ++i) {
+      for(j = i + 1; j < str.length; ++j) {
+        if(str[i] === str[j]) {
+          return false;
         }
+      }
     }
-}
+    return true;
+ }
