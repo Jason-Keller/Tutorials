@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="circles.css">
+    <script src="paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+
+    var circles = [];
+    function onKeyDown(event) {
+    // When a key is pressed, set the content of the text item:
+    // Will create a random point on the currently viewable canvas
+        var maxPoint = new Point(view.size.width, view.size.height);
+        var randomPoint = Point.random();
+        var point = maxPoint * randomPoint;
+        console.log(maxPoint);
+        var newCircle = new Path.Circle(point, 10);
+        newCircle.fillColor = 'orange';
+        circles.push(newCircle);
+    }
+
+    var animatedCircle = new Path.Circle(new Point(300, 300), 100)
+    animatedCircle.fillColor = 'red';
+
+    function onFrame(event){
+        for(var i = 0; i < circles.length; i++){
+            circles[i].scale(.9);
+            circles[i].fillColor.hue += 1;
+        }
+        animatedCircle.fillColor.hue += 1;
+        animatedCircle.scale(.9);
+    }
+
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    
+</body>
+</html>
