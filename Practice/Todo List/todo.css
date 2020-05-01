@@ -1,38 +1,19 @@
-body{
+body {
   font-family: Tahoma;
   background: whitesmoke;
 }
 
-.flex-container {
-  display: flex;
-  justify-content: center;
+.container {
+  border: 3px solid black;
+  width: 400px;
+  margin: 0 auto;
 }
 
-.header {
-  font-size: 75px;
+h1 {
+  margin: 0;
+  padding: 10px;
 }
 
-hr {
-  width: 100%;
-}
-
-.begin {
-  width: 100%;
-  border: none;
-  color: green;
-}
-
-div {
-  border: none;
-}
-
-.space {
-  width: 600px;
-  height: 40px;
-}
-
-.hiddenButton {
-  width: 100%;
-  border: none;
-  color: green;
+input {
+  width: 395px;
 }
