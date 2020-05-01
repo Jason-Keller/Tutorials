@@ -17,3 +17,12 @@ h1 {
 input {
   width: 395px;
 }
+
+.completed {
+  color: gray;
+  text-decoration: line-through;
+}
+
+ul {
+  list-style-type: none;
+}
