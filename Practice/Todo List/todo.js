@@ -9,7 +9,7 @@ for(var i = 0; i < li.length; i++){
     });
 }
 
-for(var i = 0; i < li.length; i++){
+for(var i = 0; i < exit.length; i++){
     exit[i].addEventListener("click", "li", function(e){
         e.stopPropagation();
         console.log("Hello");
