@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="todo.css">
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
 </head>
 <body>
     <div class="container">
         <h1>Add a todo</h1>
-        <input type="text">
-        <ul id="my-list">
+        <input type="text" placeholder="Enter a new corgi-related item">
+        <ul id="myList">
             <li><span>X</span> Adopt corgi</li>
             <li><span>X</span> Name corgi</li>
             <li><span>X</span> Walk corgi</li>
             <li><span>X</span> Feed corgi</li>
+        </ul>
+    </div>
+    <div class="container-2">
+        <h1>Your removed items</h1>
+        <ul id="newList">  
+            <li id="catcher"><span>X</span> Ignore</li>
         </ul>
     </div>
 <script src="todo.js"></script>

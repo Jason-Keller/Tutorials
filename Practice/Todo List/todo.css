@@ -1,12 +1,6 @@
 body {
-  font-family: Tahoma;
+  font-family: "Tahoma";
   background: whitesmoke;
-}
-
-.container {
-  border: 3px solid black;
-  width: 400px;
-  margin: 0 auto;
 }
 
 h1 {
@@ -15,7 +9,23 @@ h1 {
 }
 
 input {
-  width: 395px;
+  width: 390px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  border: 3px solid black;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.container-2 {
+  border: 3px solid black;
+  width: 400px;
+  margin: 50px auto;
 }
 
 .completed {
@@ -23,6 +33,6 @@ input {
   text-decoration: line-through;
 }
 
-ul {
+.catcher {
   list-style-type: none;
 }
