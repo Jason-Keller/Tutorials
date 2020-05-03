@@ -1,4 +1,5 @@
 const inp = document.querySelector("input");
+const txtarea = document.getElementById("txt");
 
 inp.addEventListener("keydown", function(){
     const keyPress = event.keyCode;
