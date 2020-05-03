@@ -1,0 +1,41 @@
+body {
+    font-family: "Tahoma";
+    background: steelblue;
+  }
+  
+  h1{
+    color: whitesmoke;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  input {
+    height: 500px;
+    width: 500px;
+  }
+  
+  .container{
+    margin: 0 auto;
+    width: 450px;
+  }
+
+  #txt {
+    width: 100%;
+  }
+
+  #txt2 {
+      width: 100%;
+  }
+
+  hr {
+      color: whitesmoke;
+  }
+
+  p {
+      color: whitesmoke;
+      font-size: 0.9rem;
+      text-align: center;
+  }

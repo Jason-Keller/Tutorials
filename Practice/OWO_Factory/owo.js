@@ -1,9 +1,26 @@
 const inp = document.querySelector("input");
 const txtarea = document.getElementById("txt");
+const txtarea2 = document.getElementById("txt2");
 
-inp.addEventListener("keydown", function(){
+// inp.addEventListener("keydown", function(){
+//     const keyPress = event.keyCode;
+//     const inpValue = inp.value;
+//     if(keyPress === 13){
+//         console.log(inpValue.split(""));
+//         this.value = "";
+//         for(var i = 0; i < inpValue.length; i++){
+//             if(inpValue[i] === "r"){
+//                 const regex = /r/gi;
+//                 console.log("Found an r! Replacing...");
+//                 alert(inpValue.replace(regex, "w"));
+//             }
+//         }
+//     }
+// });
+
+txtarea.addEventListener("keydown", function(){
     const keyPress = event.keyCode;
-    const inpValue = inp.value;
+    const inpValue = txtarea.value;
     if(keyPress === 13){
         console.log(inpValue.split(""));
         this.value = "";
@@ -11,8 +28,10 @@ inp.addEventListener("keydown", function(){
             if(inpValue[i] === "r"){
                 const regex = /r/gi;
                 console.log("Found an r! Replacing...");
-                alert(inpValue.replace(regex, "w"));
+                OWO = inpValue.replace(regex, "w");
             }
         }
+        txtarea2.value = OWO;
+        console.log(OWO);
     }
 });
