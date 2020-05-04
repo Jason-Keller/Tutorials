@@ -26,7 +26,6 @@ app.get("/r/:subredditName/comments/:id/:title/", function(req, res){
 });
 
 // Tell express to listen to requests (start server)
-
 app.listen(3000, function(){
     console.log("Server has started!")
 });
