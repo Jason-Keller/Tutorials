@@ -18,12 +18,11 @@ app.listen(3000, function(){
 });
 
 //Speak =========================================================
-app.get("/speak:", function(req, res){
+app.get("/speak/:animal", function(req, res){
     var speak = req.params.animal
     res.send("Hello" + speak);
 });
 //Speak =========================================================
-
 
 //This is the homepage
 app.get("/", function(req, res){
