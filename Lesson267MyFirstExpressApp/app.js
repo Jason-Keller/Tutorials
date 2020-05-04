@@ -21,3 +21,7 @@ app.get("/dog", function(res, res){
 app.listen(3000, function(){
     console.log("Server has started!")
 });
+
+app.get("*", function(req, res){
+    res.send("You are a star");
+});
