@@ -19,10 +19,36 @@ app.listen(3000, function(){
 
 //Speak =========================================================
 app.get("/speak/:animal", function(req, res){
-    var speak = req.params.animal
-    res.send("Hello" + speak);
+    var sounds = {
+        pig: "Oink",
+        cow: "Moo",
+        dog: "Woof woof!",
+        cat: "I hate you, human",
+        goldfish: "...."
+    }
+    var animal = req.params.animal.toLocaleLowerCase();
+    var sound = sounds[animal];
+    res.send("The " + animal + " says: " + sound);
 });
 //Speak =========================================================
+
+//Message =========================================================
+app.get("/repeat/:message/:times", function(req, res){
+    var message = req.params.message;
+    var times = Number(req.params.times);
+    var result = ""
+
+    for(var i = 0; i < times; i++){
+        result += message + " ";
+    }
+    res.send(result);
+});
+//Message =========================================================
+
+
+
+
+
 
 //This is the homepage
 app.get("/", function(req, res){
