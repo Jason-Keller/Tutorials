@@ -1,8 +1,12 @@
 var express = require("express");
+var bodyParser = require("body-parser");
 var app = express();
 
+app.use(bodyParser.urlencoded({extended: true}));
 //Set the view engine to ejs
 app.set("view engine", "ejs");
+
+var friends = ["Ryan", "Shaun", "Blake", "Erika", "Ryan", "Griffin", "Austin", "Kathryn", "Chris"];
 
 //Define the root director
 app.get("/", function(req, res){
@@ -11,13 +15,14 @@ app.get("/", function(req, res){
 
 //Create a post route -- this is used any time we want to add something to the database
 app.post("/addfriend", function(req, res){
-    console.log(req.body);
-    res.send("You have reached the post route!");
+    var newFriend = req.body.newfriend;
+    friends.push(newFriend);
+    res.redirect("/friends");
+    console.log(req.body.newfriend);
 });
 
 //Create a "friends" page
 app.get("/friends", function(req, res){
-    var friends = ["Ryan", "Shaun", "Blake", "Erika", "Ryan", "Griffin", "Austin", "Kathryn", "Chris"];
     res.render("friends", {friends: friends});
 });
 
