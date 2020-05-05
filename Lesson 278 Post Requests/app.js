@@ -31,15 +31,6 @@ app.get("*", function(req, res){
     res.send("You have hit a 404");
 });
 
-
-
-
-
-
-
-
-
-
 app.listen(3000, function(){
 console.log("=========================");
 console.log("Server listening!");
