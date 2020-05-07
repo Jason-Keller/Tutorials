@@ -4,7 +4,7 @@ const spanB= document.getElementById("B");
 
 //======================================================================================================================
 const noun = ["Sales", "Marketing", "HTML", "JavaScript", "Accounting", "IT", "Recruitng", "Human Resources", "Software Development", "People", "Software", "Charity", "Underling", "Brand", "Graphic", "Social Media", "Media Relations", "eCommerce"];
-const title = ["Engineer", "Specialist", "Associate", "Analyst", "Advocate", "Student", "Champion", "Founder", "Executive", "Manager", "Agent", "Coder", "Programmer", "Hacker", "Priest", "High Priest", "Shaman", "Sales Manager", "Account Executive", "Mancer", "Head", "Lead", "Moron", "Developer", "Buyer", "Assistant", "Copywriter", "Coordinator", "Hero", "Programmer", "Journalist", "Line Cook", "Cashier", "Fucktard", "Player", "Chief", "Warrior", "Lich"]
+const title = ["Engineer", "Specialist", "Associate", "Analyst", "Advocate", "Student", "Champion", "Founder", "Executive", "Manager", "Agent", "Coder", "Programmer", "Hacker", "Priest", "High Priest", "Shaman", "Sales Manager", "Account Executive", "Mancer", "Head", "Lead", "Moron", "Developer", "Buyer", "Assistant", "Copywriter", "Coordinator", "Hero", "Programmer", "Journalist", "Line Cook", "Cashier", "Fuck", "Player", "Chief", "Warrior", "Lich", "Ninja", "Rockstar"]
 //======================================================================================================================
 
 button.addEventListener("click", function(){
