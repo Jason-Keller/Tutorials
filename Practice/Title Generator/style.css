@@ -1,0 +1,23 @@
+body {
+    background: #5D8EC0;
+}
+
+.grid {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 200px 250px;
+    grid-template-rows: minmax(150px auto);
+    grid-gap: 20px;
+}
+
+.one {
+    grid-column: span 2;
+}
+
+.two {
+    grid-row: span 2;
+}
+
+.three {
+    grid-row span 3;
+}
