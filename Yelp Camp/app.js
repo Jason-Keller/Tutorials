@@ -11,12 +11,6 @@ const campgrounds = [
     {name: "Estes Park", image: "https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"}
 ];
 
-
-
-
-
-
-
 app.get("/", function(req, res){
     res.render("landing")
 });
