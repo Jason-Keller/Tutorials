@@ -1,6 +1,11 @@
 body {
-    background: rgb(49, 52, 54);
-    background-image: url("Business.jpg");
+    background: rgb(4, 37, 59);
+    color: whitesmoke;
+    font-family: "Nunito", "Tahoma";
+}
+
+span {
+    font-size: 3rem;
 }
 
 .grid {
@@ -13,4 +18,13 @@ body {
 
 .one {
     justify-self: center;
+}
+
+.two {
+    padding-right: 200px;
+}
+
+button {
+    background: #f1eef0;
+    -webkit-border-radius: 28;  -moz-border-radius: 28;  border-radius: 28px;;
 }
