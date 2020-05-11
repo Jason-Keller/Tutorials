@@ -1,53 +1,63 @@
 body {
-    color: whitesmoke;
-    font-family: "Nunito", "Tahoma";
     margin: 0 auto;
 }
 
 span {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    text-shadow : horizontal-shadow vertical-shadow blur whitesmoke;
 }
 
-button {
-    background: #f1eef0;
-    -webkit-border-radius: 28;  -moz-border-radius: 28;  border-radius: 28px;;
+#createTitle {
+    background: #ffffff00;
+    color: #eeeeee;
+    -webkit-border-radius: 28;  -moz-border-radius: 28;  border-radius: 28px;
+    font-family: "Nunito", "Tahoma";
+    font-size: 2.5rem;
+    margin: 0;
+    white-space: nowrap;
+    padding: 0.5rem;
 }
 
-h1 {
-    font-weight: 200;
-    font-size: 2rem;
-}
-
-.headingOffSet {
-
+button:hover {
+    outline: 0;
+    border-radius: 0.3rem;
+    box-shadow: 0 0 0 2px rgb(36, 138, 255);
 }
 
 .grid {
-    background: rgb(4, 37, 59);
+    background: rgb(7, 58, 92);
     display: grid;
-    grid-template-columns: 5fr 5fr 5fr 5fr;
+    grid-template-columns: repeat(4, 2fr);
     grid-auto-rows: minmax(1rem, auto);
-    grid-gap: 1rem;
-    justify-content: center;
-    align-self: center;
+    grid-gap: 2.5rem;
+    justify-items: center;
     padding: 15rem 15rem 15rem 15rem;
+    font-family: "Nunito", "Tahoma";
+    color: whitesmoke;
+}
+
+.one {
+    justify-self: center;
+    align-self: center;
 }
 
 .grid2 {
     display: grid;
     background: rgb(48, 48, 48);
+    grid-template-columns: repeat(1, 1fr);
+    font-family: "Roboto";
 }
 
-.one {
-    justify-self: center;
-    padding-right: 4rem;
+.headingOffSet {
+  justify-self: center;
+  align-self: center;
+  color: whitesmoke;
 }
 
-.two {
-    padding-right: 4rem;
+#titleInflation {
+    font-weight: 200;
 }
 
-.three {
-    justify-content: flex-start;
-    padding-right: 4rem;
+h3 {
+
 }
