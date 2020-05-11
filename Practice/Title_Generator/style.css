@@ -45,13 +45,16 @@ button:hover {
     display: grid;
     background: rgb(48, 48, 48);
     grid-template-columns: repeat(1, 1fr);
-    font-family: "Roboto";
+
 }
 
 .headingOffSet {
   justify-self: center;
   align-self: center;
-  color: whitesmoke;
+  font-family: "open-sans";
+  color: rgb(255, 255, 255);
+  font-size: 1.125rem;
+  letter-spacing: 0.2px;
 }
 
 #titleInflation {
