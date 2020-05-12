@@ -26,7 +26,7 @@ button:hover {
 
 h3 {
     font-weight: 100;
-    
+    padding-left: 35%;
 }
 
 .grid {
@@ -63,11 +63,24 @@ h3 {
 }
 
 #titleInflation {
+    font-size: 3rem;
     font-weight: 200;
-    color: rgb(255, 255, 255);
+    color: rgb(151, 149, 149);
 }
 
 .titleInflationDef {
     font-weight: 100;
     font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+.blockContainer {
+    display: grid;
+    grid-template-columns: 28rem;
+    justify-items: center;
+    padding-left: 25%;
+}
+
+a {
+    color: rgb(123, 243, 207);
 }
