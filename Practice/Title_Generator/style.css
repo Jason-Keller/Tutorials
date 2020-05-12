@@ -3,8 +3,8 @@ body {
 }
 
 span {
-    font-size: 2.5rem;
-    text-shadow : horizontal-shadow vertical-shadow blur whitesmoke;
+    font-size: 2.0rem;
+    text-shadow : horizontal-shadow vertical-shadow blur 10px 5px 5px black; 
 }
 
 #createTitle {
@@ -12,7 +12,7 @@ span {
     color: #eeeeee;
     -webkit-border-radius: 28;  -moz-border-radius: 28;  border-radius: 28px;
     font-family: "Nunito", "Tahoma";
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     margin: 0;
     white-space: nowrap;
     padding: 0.5rem;
@@ -32,10 +32,11 @@ h3 {
 .grid {
     background: rgb(7, 58, 92);
     display: grid;
-    grid-template-columns: repeat(4, 2fr);
-    grid-auto-rows: minmax(1rem, auto);
-    grid-gap: 2.5rem;
+    grid-template-columns: repeat(4, 20%);
+    grid-auto-rows: minmax(27%, auto);
+    grid-gap: 4rem;
     justify-items: center;
+    align-items: center;
     padding: 15rem 15rem 15rem 15rem;
     font-family: "Nunito", "Tahoma";
     color: whitesmoke;
@@ -49,7 +50,7 @@ h3 {
 .grid2 {
     display: grid;
     background: rgb(48, 48, 48);
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 100%);
 
 }
 
