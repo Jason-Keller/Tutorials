@@ -4,12 +4,8 @@ var express      = require("express"),
     mongoose     = require("mongoose"),
     Campground   = require("./models/campground"),
     seedDB       = require("./seeds")
-    // Comment      = require("./models/comment"),
+    Comment      = require("./models/comment"),
     // User         = require("./models/user")
-
-
-seedDB();
-
 
 //Connect Mongoose
 mongoose.connect("mongodb://localhost/yelp_camp", {
@@ -18,24 +14,7 @@ mongoose.connect("mongodb://localhost/yelp_camp", {
 });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-
-//Schema setup
-
-
-// Campground.create(    
-//     {
-//     name: "Estes Park", 
-//     image: "https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80",
-//     description: "Stunning wildlife and access to local scenery. Beautiful."
-//     }, function(err, campground){
-//     if(err){
-//         console.log("ERROR!");
-//     } else {
-//         console.log("CAMPGROUND CREATED: ");
-//         console.log(campground);
-//     }
-// });
-
+seedDB();
 
 // const campgrounds = [
 //     {name: "Salmon Creek", image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"},
@@ -86,10 +65,11 @@ app.get("/campgrounds/new", function(req, res){
 //SHOW - shows more infor about one campground
 app.get("/campgrounds/:id", function(req, res){
     //Find the campground with provided ID
-    Campground.findById(req.params.id, function(err, foundCampground){
+    Campground.findById(req.params.id).populate("comments").exec(function(err, foundCampground){
         if(err){
             console.log(err);
         } else {
+            console.log(foundCampground);
             //Render show template with that campground
             res.render("show", {campground: foundCampground});
         }
