@@ -1,10 +1,10 @@
-var express      = require("express"),
+const express    = require("express"),
     app          = express(),
     bodyParser   = require("body-parser"),
     mongoose     = require("mongoose"),
     Campground   = require("./models/campground"),
-    seedDB       = require("./seeds")
-    Comment      = require("./models/comment"),
+    seedDB       = require("./seeds"),
+    Comment      = require("./models/comment")
     // User         = require("./models/user")
 
 //Connect Mongoose
@@ -81,8 +81,39 @@ app.get("/campgrounds/:id", function(req, res){
 //===========================================
 
 app.get("/campgrounds/:id/comments/new", function(req, res){
-    res.send("comments/new");
+    //find campground by ID
+    Campground.findById(req.params.id, function(err, campground){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("comments/new", {campground: campground});
+        }
+    });
 });
+
+app.post("/campgrounds/:id/comments", function(req, res){
+    //Lookup campground using ID
+    Campground.findById(req.params.id, function(err, campground){
+        if(err){
+            console.log(err);
+            res.redirect("/campgrounds");
+        } else {
+            Comment.create(req.body.comment, function(err, comment ){
+                if(err){
+                    console.log(err);
+                } else {
+                    campground.comments.push(comment);
+                    campground.save();
+                    res.redirect("/campgrounds/" + campground._id);
+                }
+            });
+        }
+    });
+    //Create new comments
+    //Connect new comment to campground
+    //Redirect to campground show page
+});
+
 
 app.listen(3000, function(){
     console.log("=======================================")
