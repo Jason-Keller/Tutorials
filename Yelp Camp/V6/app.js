@@ -8,6 +8,7 @@ const express     = require("express"),
     passport      = require("passport"),
     LocalStrategy = require("passport-local"),
     User          = require("./models/user");
+    commentRoutes = require("./routes/comments");
 
 //Connect Mongoose
 mongoose.connect("mongodb://localhost/yelp_camp_V6", {
@@ -31,6 +32,12 @@ app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+//Middleware to pass currentUser to all routes
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+});
 
 app.get("/", function(req, res){
     res.render("landing")
