@@ -32,12 +32,6 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// const campgrounds = [
-//     {name: "Salmon Creek", image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"},
-//     {name: "Lake Wellington", image: "https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"},
-//     {name: "Estes Park", image: "https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80"}
-// ];
-
 app.get("/", function(req, res){
     res.render("landing")
 });
@@ -96,7 +90,7 @@ app.get("/campgrounds/:id", function(req, res){
 //COMMENTS ROUTE
 //===========================================
 
-app.get("/campgrounds/:id/comments/new", function(req, res){
+app.get("/campgrounds/:id/comments/new", isLoggedIn, function(req, res){
     //find campground by ID
     Campground.findById(req.params.id, function(err, campground){
         if(err){
@@ -125,9 +119,6 @@ app.post("/campgrounds/:id/comments", function(req, res){
             });
         }
     });
-    //Create new comments
-    //Connect new comment to campground
-    //Redirect to campground show page
 });
 
 //=============================================
@@ -138,6 +129,7 @@ app.post("/campgrounds/:id/comments", function(req, res){
 app.get("/register", function(req, res){
     res.render("register");
 });
+
 //Handle sign up logic
 app.post("/register", function(req, res){
     const newUser = new User({username: req.body.username});
@@ -163,8 +155,21 @@ app.post("/login", passport.authenticate("local",
     successRedirect: "/campgrounds",
     failureRedirect: "/login"
 }), function(req, res){
-    res.send("Login logic happens here");
 });
+
+//LOGOUT ROUTE
+app.get("/logout", function(req, res){
+    req.logout();
+    res.redirect("/campgrounds");
+});
+
+function isLoggedIn(req, res, next){
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect("/login");
+}
+
 
 app.listen(3000, function(){
     console.log("=======================================")
