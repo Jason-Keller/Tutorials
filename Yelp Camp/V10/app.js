@@ -18,7 +18,8 @@ const commentRoutes    = require("./routes/comments"),
 //Connect Mongoose
 mongoose.connect("mongodb://localhost/yelp_camp_V8", {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 });
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
