@@ -43,6 +43,16 @@ router.post("/", function(req, res){
     });
 });
 
+router.get("/:comments_id/edit", function(req, res){
+    comment.findById(req.params.commen_id, function(err, foundComment){
+        if(err){
+            res.redirect("back")
+        } else {
+            res.render("comments/edit", {campground_id: req.params.id, comment: foundComment});
+        }
+    });
+});
+
 //MIDDLEWARE
 function isLoggedIn(req, res, next){
     if(req.isAuthenticated()){
