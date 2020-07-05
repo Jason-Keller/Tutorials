@@ -50,12 +50,8 @@ h3 {
 .grid2 {
     display: grid;
     background: rgb(48, 48, 48);
-<<<<<<< HEAD
     grid-template-columns: repeat(1, 100%);
 
-=======
-    grid-template-columns: repeat(1, 1fr);
->>>>>>> 2bcd61fc64ea0b5392675142d94b2de080ca648c
 }
 
 .headingOffSet {
