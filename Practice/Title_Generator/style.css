@@ -51,7 +51,6 @@ h3 {
     display: grid;
     background: rgb(48, 48, 48);
     grid-template-columns: repeat(1, 100%);
-
 }
 
 .headingOffSet {
